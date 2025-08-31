@@ -1,0 +1,11 @@
+@Server_HostAddress = http://localhost:80
+
+GET {{Server_HostAddress}}/status
+Accept: application/json
+
+###
+
+GET {{Server_HostAddress}}/register
+Accept: application/json
+
+###

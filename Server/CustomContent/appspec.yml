@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/CG_Server
+permissions:
+  - object: /home/ec2-user/CG_Server
+    owner: root
+hooks:
+  ApplicationStop:
+    - location: ./ApplicationStop.sh
+      timeout: 30
+      runas: root
+  AfterInstall:
+    - location: ./AfterInstall.sh
+      timeout: 30
+      runas: root
+  ApplicationStart:
+    - location: ./ApplicationStart.sh
+      timeout: 30
+      runas: root
+  
